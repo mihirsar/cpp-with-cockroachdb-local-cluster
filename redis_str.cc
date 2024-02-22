@@ -4,11 +4,11 @@
 int main() {
     try {
         // Connect to CockroachDB cluster
-        pqxx::connection conn("host=172.23.74.227 port=26257 user=root sslmode=disable dbname=pest_db");
+        pqxx::connection conn("host=ip_address port=26257 user=root sslmode=disable dbname=dbname");
         
         // Perform SQL query
         pqxx::work txn(conn);
-        pqxx::result result = txn.exec("CREATE TABLE ardent_test_table;");
+        pqxx::result result = txn.exec("CREATE TABLE table_name;");
 
         // Process query results
         // for (const auto& row : result) {
